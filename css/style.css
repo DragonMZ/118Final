@@ -82,6 +82,11 @@ p {
 #aboutCard p{
     font-size: 1rem;
 }
+h2:before {
+    content: "| ";
+    color: var(--eerie-black);
+    font-size: 3rem;
+}
 @media only screen and (min-width: 600px) {
 
     #hobbies img {
@@ -97,10 +102,9 @@ p {
         box-shadow: 30px 30px 20px black;
         transform: scale(1.1);
     }
-}
-h2:before {
-    content: "| ";
-    color: var(--eerie-black);
+    #aboutCard p {
+        font-size: 1.3rem;
+    }
 }
 #footer {
     background-color: var(--eerie-black);
