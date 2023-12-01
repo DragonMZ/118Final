@@ -23,12 +23,13 @@ p {
 .navbar-brand:focus, .navbar-brand:hover {
     color: var(--lightthistle);
 }
-#link {
+.nav-link {
     color: var(--lightthistle);
     text-decoration: underline 0.15em rgba(240, 211, 247, 0);
     transition: color 0.5s, text-decoration-color 0.5s;
 }
-#link:hover {
+.nav-link:hover {
+    color: var(--lightthistle);
     text-decoration-color: rgba(240, 211, 247, 1);
 }
 #banner {
