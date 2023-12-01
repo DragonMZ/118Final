@@ -1,0 +1,124 @@
+:root {
+    --eerie-black: #191716;
+    --lightthistle: #f0d3f7;
+    --thistle: #BEA3C5;
+    --darkthistle: #39233F;
+    --midthistle: #8F7596;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+p {
+    margin:0;
+}
+#navbar {
+    background-color: var(--eerie-black);
+}
+.navbar-brand {
+    color: var(--lightthistle);
+}
+.navbar-brand:focus, .navbar-brand:hover {
+    color: var(--lightthistle);
+}
+#link {
+    color: var(--lightthistle);
+    text-decoration: underline 0.15em rgba(240, 211, 247, 0);
+    transition: color 0.5s, text-decoration-color 0.5s;
+}
+#link:hover {
+    text-decoration-color: rgba(240, 211, 247, 1);
+}
+#banner {
+    height: 50vh;
+    padding: 0;
+    object-fit: cover;
+}
+#whoami {
+    background-color: var(--eerie-black);
+    background: linear-gradient(var(--eerie-black) 0%, var(--darkthistle) 100%);
+}
+#whoami h1, #whoami p {
+    color: var(--lightthistle);
+}
+#whoami h1:after {
+    background-color: var(--lightthistle);
+    content: "";
+    display: flex;
+    height: .5%;
+    margin: 2rem auto 5rem;
+    padding: .3rem;
+    width: 20%;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .img-fluid {
+        object-fit: cover;
+    }
+
+    #whoami h1:after {
+        margin: 2rem auto;
+        padding: .2rem;
+        width: 50%;
+    }
+    #whoami p {
+        font-size: 1rem;
+    }
+}
+#hobbies {
+    background-color: var(--eerie-black);
+    background: linear-gradient(var(--darkthistle) 0%, var(--eerie-black) 100%);
+}
+#hobbies img {
+    margin-bottom: 3rem;
+}
+#aboutCard {
+    background-color: var(--thistle);
+}
+#aboutCard p{
+    font-size: 1rem;
+}
+@media only screen and (min-width: 600px) {
+
+    #hobbies img {
+        margin-bottom: 0;
+    }
+    #aboutCard {
+        width: auto;
+        transition: 0.7s;
+        box-shadow: 20px 20px 10px black;
+    }
+    #aboutCard:hover {
+        background-color: var(--lightthistle);
+        box-shadow: 30px 30px 20px black;
+        transform: scale(1.1);
+    }
+}
+h2:before {
+    content: "| ";
+    color: var(--eerie-black);
+}
+#footer {
+    background-color: var(--eerie-black);
+    color: var(--lightthistle);
+}
+i {
+    font-size: 2rem;
+    color: var(--lightthistle);
+    transition: color 0.5s, font-size, 1s;
+}
+#twitter:hover, #twitter:focus {
+   color: deepskyblue;
+    /*font-size: 2.5rem;*/
+}
+#linked:hover, #linked:focus{
+    color: cornflowerblue;
+    /*font-size: 2.5rem;*/
+}
+#youtube:hover, #youtube:focus{
+    color:red;
+    /*font-size: 2.5rem;*/
+}
