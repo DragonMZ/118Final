@@ -1,15 +1,35 @@
 :root {
-    --eerie-black: #191716;
-    --lightthistle: #f0d3f7;
-    --thistle: #BEA3C5;
-    --darkthistle: #39233F;
-    --midthistle: #8F7596;
+    --eerie-black: #191716; /* rgba(25,23,22,100) */
+    --lightthistle: #f0d3f7; /* rgba(240,211,247,100) */
+    --thistle: #BEA3C5; /* rgba(190,163,197,100) */
+    --darkthistle: #39233F; /* rgba(57,35,63,100) */
+    --midthistle: #8F7596; /* rgba(143,117,150,100) */
 }
 html, body {
     width: 100%;
     height: 100%;
     margin: 0;
     font-family: 'Roboto', sans-serif;
+    background-color: var(--eerie-black);
+}
+h1,h2,h3,h4 {
+    color: var(--lightthistle);
+}
+h4:after {
+    background-color: var(--lightthistle);
+    content: "";
+    display: flex;
+    height: .5%;
+    margin: 2rem auto 3rem;
+    padding: .3rem;
+    width: 20%;
+}
+@media only screen and (max-width: 600px) {
+    h4:after {
+        margin: 2rem auto;
+        padding: .2rem;
+        width: 50%;
+    }
 }
 p {
     margin:0;
@@ -32,91 +52,27 @@ p {
     color: var(--lightthistle);
     text-decoration-color: rgba(240, 211, 247, 1);
 }
-#banner {
-    height: 50vh;
-    padding: 0;
-    object-fit: cover;
-}
-#whoami {
+.dropdown-menu {
     background-color: var(--eerie-black);
-    background: linear-gradient(var(--eerie-black) 0%, var(--darkthistle) 100%);
 }
-#whoami h1, #whoami p {
+.dropdown-item {
     color: var(--lightthistle);
+    font-size: 1.5rem;
 }
-#whoami h1:after {
-    background-color: var(--lightthistle);
-    content: "";
-    display: flex;
-    height: .5%;
-    margin: 2rem auto 5rem;
-    padding: .3rem;
-    width: 20%;
-}
-
-@media only screen and (max-width: 600px) {
-
-    .img-fluid {
-        object-fit: cover;
-    }
-
-    #whoami h1:after {
-        margin: 2rem auto;
-        padding: .2rem;
-        width: 50%;
-    }
-    #whoami p {
-        font-size: 1rem;
-    }
-}
-#hobbies {
-    background-color: var(--eerie-black);
-    background: linear-gradient(var(--darkthistle) 0%, var(--eerie-black) 100%);
-}
-#hobbies img {
-    margin-bottom: 3rem;
-}
-#aboutCard {
-    background-color: var(--thistle);
-}
-#aboutCard p{
-    font-size: 1rem;
-}
-h2:before {
-    content: "| ";
-    color: var(--eerie-black);
-    font-size: 3rem;
-}
-@media only screen and (min-width: 600px) {
-
-    #hobbies img {
-        margin-bottom: 0;
-    }
-    #aboutCard {
-        width: auto;
-        transition: 0.7s;
-        box-shadow: 20px 20px 10px black;
-    }
-    #aboutCard:hover {
-        background-color: var(--lightthistle);
-        box-shadow: 30px 30px 20px black;
-        transform: scale(1.1);
-    }
-    #aboutCard p {
-        font-size: 1.3rem;
-    }
+.dropdown-item:hover {
+    background-color: var(--darkthistle);
 }
 #footer {
     background-color: var(--eerie-black);
     color: var(--lightthistle);
 }
-i {
+#footer i {
     font-size: 2rem;
     color: var(--lightthistle);
     transition: color 0.5s, font-size, 1s;
 }
 #twitter:hover, #twitter:focus {
-   color: deepskyblue;
+    color: deepskyblue;
     /*font-size: 2.5rem;*/
 }
 #linked:hover, #linked:focus{
@@ -126,4 +82,223 @@ i {
 #youtube:hover, #youtube:focus{
     color:red;
     /*font-size: 2.5rem;*/
+}
+
+/*Index Page*/
+#whoami {
+    background: linear-gradient(var(--eerie-black) 0%, var(--darkthistle) 100%);
+}
+#hobbies {
+    background: linear-gradient(var(--darkthistle) 0%, var(--eerie-black) 100%);
+}
+#banner {
+    height: 40vh;
+    padding: 0;
+    object-fit: cover;
+}
+#whoami p {
+    color: var(--lightthistle);
+}
+
+@media only screen and (max-width: 600px) {
+    .img-fluid {
+        object-fit: cover;
+    }
+    #whoami p {
+        font-size: 1rem;
+    }
+}
+
+#hobbies .carousel-inner {
+    border-radius: 1rem;
+    overflow: hidden;
+}
+#hobbies p{
+    color: var(--lightthistle);
+    size: 1rem
+}
+#hobbies h2:before {
+    content: "| ";
+    color: var(--lightthistle);
+    font-size: 3rem;
+}
+
+/*Resume Page*/
+#skills {
+    background: linear-gradient(var(--eerie-black) 0%, var(--darkthistle) 100%);
+}
+#skills .card {
+    background-color: transparent;
+    border-color: var(--lightthistle);
+    color: var(--lightthistle);
+    width: 12rem;
+    transition: 0.5s;
+}
+#skills .card:hover {
+    background-color: var(--lightthistle);
+    border-color: var(--eerie-black);
+    box-shadow: 1rem 1rem;
+    color: black;
+}
+#skills .card i {
+    font-size: 5rem;
+}
+
+@media only screen and (max-width: 600px) {
+    #skills .card {
+        margin-bottom: 1rem;
+    }
+    #skills .card:hover {
+        box-shadow: none;
+    }
+    .skill {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 0;
+    }
+}
+
+#education, #work, #volunteer p {
+    color: var(--lightthistle);
+}
+#education {
+    background: linear-gradient(var(--darkthistle) 0%, var(--midthistle) 100%);
+}
+#work {
+    background: linear-gradient(var(--midthistle) 0%, var(--darkthistle) 100%);
+}
+#volunteer {
+    background: linear-gradient(var(--darkthistle) 0%, var(--eerie-black) 100%);
+}
+#volunteer h2:before {
+    content: "| ";
+    color: var(--lightthistle);
+    font-size: 3rem;
+}
+#resumeDownload {
+    color: var(--lightthistle);
+    border-bottom-style: solid;
+    border-color: var(--lightthistle);
+    padding: 0 0.5rem 0 0.5rem;
+    text-decoration: none;
+    transition: 0.5s;
+}
+#resumeDownload:hover {
+    background-color: var(--lightthistle);
+    border-radius: 1rem;
+    font-weight: bold;
+    color: black;
+}
+
+/*Projects Page*/
+#intro {
+    background: linear-gradient(var(--eerie-black) 0%, var(--darkthistle) 100%);
+}
+#project1 {
+    background: linear-gradient(var(--darkthistle) 0%, var(--midthistle) 100%);
+}
+#project2 {
+    background: linear-gradient(var(--midthistle) 0%, var(--thistle) 50%, var(--midthistle) 100%);
+}
+#project3 {
+    background: linear-gradient(var(--midthistle) 0%, var(--darkthistle) 100%);
+}
+#project4 {
+    background: linear-gradient(var(--darkthistle) 0%, var(--eerie-black) 100%);
+}
+#intro p {
+    color: var(--lightthistle);
+}
+#project1 h4:after, #project2 h4:after, #project3 h4:after, #project4 h4:after {
+    justify-content: flex-start;
+    margin: 2rem 0 3rem;
+    width: 25%;
+}
+@media only screen and (max-width: 600px) {
+    #project1, #project2, #project3, #project4 {
+        text-align: center;
+    }
+    #project1 h4:after, #project2 h4:after, #project3 h4:after, #project4 h4:after {
+        margin: 2rem auto;
+        padding: .2rem;
+        width: 90%;
+    }
+}
+.imagecard {
+    margin-bottom: 3rem;
+}
+.myCard {
+    background-color: var(--thistle);
+}
+.myCard h2:before {
+    content: "| ";
+    color: var(--eerie-black);
+    font-size: 3rem;
+}
+@media only screen and (min-width: 1400px) {
+    .imagecard {
+        margin-bottom: 0;
+    }
+    .myCard {
+        width: auto;
+        transition: 0.7s;
+        box-shadow: 20px 20px 10px black;
+    }
+    .myCard:hover {
+        background-color: var(--lightthistle);
+        box-shadow: 30px 30px 20px black;
+        transform: scale(1.1);
+    }
+    .myCard p {
+        font-size: 1.3rem;
+    }
+}
+
+#p2Card {
+    background-color: var(--darkthistle);
+    color: var(--lightthistle);
+}
+#p2Card h2:before {
+    color: var(--lightthistle);
+}
+#p2Card p {
+    color: var(--lightthistle);
+}
+
+
+
+/*Contact Page*/
+#contact {
+    background: linear-gradient(var(--eerie-black) 0%, var(--darkthistle) 50%, var(--eerie-black) 100%);
+}
+#formBox {
+    background-color: transparent;
+    border-style: dashed;
+    border-color: var(--thistle);
+    transition: 1s;
+}
+#formBox:hover {
+    background-color: var(--eerie-black);
+    border-style: solid;
+    border-color: var(--lightthistle);
+    transform: scale(1.1);
+}
+#contact .form-control {
+    transition: 0.5s;
+}
+#contact .form-control:hover, .form-control:focus {
+    border-color: var(--lightthistle);
+    box-shadow: 0 0 0 0.25rem var(--midthistle);
+}
+#contact .btn-primary {
+    background-color: var(--midthistle);
+    color: white;
+    border-color: var(--darkthistle);
+    transition: 0.5s;
+}
+#contact .btn-primary:hover {
+    background-color: var(--thistle);
+    color: var(--eerie-black);
+    border-color: var(--lightthistle);
+    border-radius: 1.5rem
 }
