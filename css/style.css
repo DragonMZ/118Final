@@ -1,3 +1,6 @@
+/*media queries are with the relevant sections even if it creates redundancy
+CSS is generally laid out with all page stuff at the top (nav, banner, footer) and
+then page by page (index/about->resume->projects->Contact)*/
 :root {
     --eerie-black: #191716; /* rgba(25,23,22,100) */
     --lightthistle: #f0d3f7; /* rgba(240,211,247,100) */
@@ -12,9 +15,21 @@ html, body {
     font-family: 'Roboto', sans-serif;
     background-color: var(--eerie-black);
 }
+p {
+    margin:0;
+    color: var(--lightthistle);
+}
 h1,h2,h3,h4 {
     color: var(--lightthistle);
 }
+/*Makes the stylish | for paragraph titles*/
+h2:before {
+    content: "| ";
+    color: var(--lightthistle);
+    font-size: 3rem;
+}
+/*This creates the nice bar underline at the top of each section
+its up here because its used on many pages. set to change size when screen becomes small*/
 h4:after {
     background-color: var(--lightthistle);
     content: "";
@@ -31,9 +46,7 @@ h4:after {
         width: 50%;
     }
 }
-p {
-    margin:0;
-}
+/*Setting up the Navbar coloring*/
 #navbar {
     background-color: var(--eerie-black);
 }
@@ -43,6 +56,7 @@ p {
 .navbar-brand:focus, .navbar-brand:hover {
     color: var(--lightthistle);
 }
+/*This makes an invisible underline that appears when hovering*/
 .nav-link {
     color: var(--lightthistle);
     text-decoration: underline 0.15em rgba(240, 211, 247, 0);
@@ -62,6 +76,14 @@ p {
 .dropdown-item:hover {
     background-color: var(--darkthistle);
 }
+/*This makes my banner at the top of every page not shrink but has the image focus on the center
+when on smaller viewports*/
+#banner {
+    height: 40vh;
+    padding: 0;
+    object-fit: cover;
+}
+/*Setting up footer, this is up here because its on every page*/
 #footer {
     background-color: var(--eerie-black);
     color: var(--lightthistle);
@@ -69,64 +91,65 @@ p {
 #footer i {
     font-size: 2rem;
     color: var(--lightthistle);
-    transition: color 0.5s, font-size, 1s;
+    transition: 0.5s;
 }
+/*Makes the social media icons spin on hover*/
+@keyframes smedia {
+    0% {transform: rotate(0deg);}
+    25% {transform: rotate(90deg);}
+    50% {transform: rotate(180deg);}
+    75% {transform: rotate(270deg);}
+    100% {transform: rotate(360deg);}
+}
+#footer a:hover, #footer a:focus {
+    animation-name: smedia;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+/*Has all the social media icons color in on hover*/
 #twitter:hover, #twitter:focus {
     color: deepskyblue;
-    /*font-size: 2.5rem;*/
 }
 #linked:hover, #linked:focus{
     color: cornflowerblue;
-    /*font-size: 2.5rem;*/
 }
 #youtube:hover, #youtube:focus{
     color:red;
-    /*font-size: 2.5rem;*/
 }
 
-/*Index Page*/
+/*Index Page specific CSS*/
+/*This sets my background gradients for each section. There's probably a better way to do this*/
 #whoami {
     background: linear-gradient(var(--eerie-black) 0%, var(--darkthistle) 100%);
 }
 #hobbies {
     background: linear-gradient(var(--darkthistle) 0%, var(--eerie-black) 100%);
 }
-#banner {
-    height: 40vh;
-    padding: 0;
-    object-fit: cover;
-}
-#whoami p {
-    color: var(--lightthistle);
-}
-
-@media only screen and (max-width: 600px) {
-    .img-fluid {
-        object-fit: cover;
-    }
-    #whoami p {
-        font-size: 1rem;
-    }
-}
-
+/*Creates a rounded edge on the carousel images*/
 #hobbies .carousel-inner {
     border-radius: 1rem;
     overflow: hidden;
 }
-#hobbies p{
-    color: var(--lightthistle);
-    size: 1rem
-}
-#hobbies h2:before {
-    content: "| ";
-    color: var(--lightthistle);
-    font-size: 3rem;
-}
 
 /*Resume Page*/
+/*This sets my background gradients for each section. There's probably a better way to do this*/
 #skills {
     background: linear-gradient(var(--eerie-black) 0%, var(--darkthistle) 100%);
 }
+#education {
+    background: linear-gradient(var(--darkthistle) 0%, var(--midthistle) 100%);
+}
+#work {
+    background: linear-gradient(var(--midthistle) 0%, var(--darkthistle) 100%);
+}
+#volunteer {
+    background: linear-gradient(var(--darkthistle) 0%, var(--eerie-black) 100%);
+}
+#skills #banner {
+    object-position: 50% 90%;
+}
+/*style the skill cards and sets the hover effect*/
 #skills .card {
     background-color: transparent;
     border-color: var(--lightthistle);
@@ -143,7 +166,20 @@ p {
 #skills .card i {
     font-size: 5rem;
 }
-
+.box {
+    background-color: transparent;
+    border-style: dotted;
+    border-color: var(--lightthistle);
+    padding: 1rem;
+    transition: 0.5s
+}
+.box:hover {
+    background-color: var(--darkthistle);
+}
+.details {
+    margin-left: 3rem;
+}
+/*Moves the cards into a colum and removes the box-shadow*/
 @media only screen and (max-width: 600px) {
     #skills .card {
         margin-bottom: 1rem;
@@ -157,26 +193,12 @@ p {
         margin-bottom: 0;
     }
 }
-
-#education, #work, #volunteer p {
+ul {
     color: var(--lightthistle);
-}
-#education {
-    background: linear-gradient(var(--darkthistle) 0%, var(--midthistle) 100%);
-}
-#work {
-    background: linear-gradient(var(--midthistle) 0%, var(--darkthistle) 100%);
-}
-#volunteer {
-    background: linear-gradient(var(--darkthistle) 0%, var(--eerie-black) 100%);
-}
-#volunteer h2:before {
-    content: "| ";
-    color: var(--lightthistle);
-    font-size: 3rem;
 }
 #resumeDownload {
     color: var(--lightthistle);
+    border-top-style: solid;
     border-bottom-style: solid;
     border-color: var(--lightthistle);
     padding: 0 0.5rem 0 0.5rem;
@@ -191,6 +213,8 @@ p {
 }
 
 /*Projects Page*/
+/*This sets my background gradients for each section. There's probably a better way to do this*/
+
 #intro {
     background: linear-gradient(var(--eerie-black) 0%, var(--darkthistle) 100%);
 }
@@ -206,9 +230,10 @@ p {
 #project4 {
     background: linear-gradient(var(--darkthistle) 0%, var(--eerie-black) 100%);
 }
-#intro p {
-    color: var(--lightthistle);
+#intro #banner {
+    object-position: 50% 25%;
 }
+/*Shifts the underline-bar to the left side and sets resizing, needs the redundant media query due to specificity*/
 #project1 h4:after, #project2 h4:after, #project3 h4:after, #project4 h4:after {
     justify-content: flex-start;
     margin: 2rem 0 3rem;
@@ -225,16 +250,17 @@ p {
     }
 }
 .imagecard {
+    box-shadow: -1rem 1rem 10px;
     margin-bottom: 3rem;
 }
 .myCard {
     background-color: var(--thistle);
+    box-shadow: 20px 20px 10px black;
 }
-.myCard h2:before {
-    content: "| ";
-    color: var(--eerie-black);
-    font-size: 3rem;
+.myCard p {
+    color: black;
 }
+/*Adds the fancy effects for desktop only as its less lines of code that way*/
 @media only screen and (min-width: 1400px) {
     .imagecard {
         margin-bottom: 0;
@@ -242,7 +268,6 @@ p {
     .myCard {
         width: auto;
         transition: 0.7s;
-        box-shadow: 20px 20px 10px black;
     }
     .myCard:hover {
         background-color: var(--lightthistle);
@@ -253,24 +278,36 @@ p {
         font-size: 1.3rem;
     }
 }
-
+#p1Card h2:before, #p3Card h2:before, #p4Card h2:before {
+    color: var(--eerie-black);
+}
+/*swaps the colors compared to other cards due to background gradient*/
 #p2Card {
     background-color: var(--darkthistle);
     color: var(--lightthistle);
 }
-#p2Card h2:before {
-    color: var(--lightthistle);
-}
+/*Need this for specificity*/
 #p2Card p {
     color: var(--lightthistle);
 }
-
-
+#project1 a {
+    color: black;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+#project2 img {
+    height: 500px;
+}
+#project4 iframe {
+    box-shadow: -1rem 1rem 10px;
+    margin-bottom: 5rem;
+}
 
 /*Contact Page*/
 #contact {
     background: linear-gradient(var(--eerie-black) 0%, var(--darkthistle) 50%, var(--eerie-black) 100%);
 }
+/*Style the border box around the form*/
 #formBox {
     background-color: transparent;
     border-style: dashed;
@@ -283,6 +320,12 @@ p {
     border-color: var(--lightthistle);
     transform: scale(1.1);
 }
+@media only screen and (max-width: 768px) {
+    #formBox:hover {
+        transform: none;
+    }
+}
+/*Creates a small outline around the form fields when selected*/
 #contact .form-control {
     transition: 0.5s;
 }
@@ -290,6 +333,7 @@ p {
     border-color: var(--lightthistle);
     box-shadow: 0 0 0 0.25rem var(--midthistle);
 }
+/*Button styling*/
 #contact .btn-primary {
     background-color: var(--midthistle);
     color: white;

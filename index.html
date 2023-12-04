@@ -20,6 +20,8 @@
 </head>
 <body>
 
+<!--Using bootstrap classes this creates a standard top navbar that turns into a hamburger bar at smaller sizes
+The projects icon is a dropdown menu instead of a standard anchor with each part going to a different section of that page-->
   <nav class="navbar navbar-expand-lg" id="navbar" data-bs-theme="dark">
     <div class="container-fluid">
           <a class="navbar-brand fs-1 fw-bolder text-end col-3" href="contact.html#formBox">Thomas Adler</a>
@@ -38,7 +40,7 @@
               <li class="nav-item dropdown mx-4">
                 <a class="nav-link fs-3 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Projects</a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="projects.html#intro">About</a></li>
+                  <li><a class="dropdown-item" href="projects.html#intro">Top</a></li>
                   <li><a class="dropdown-item" href="projects.html#project1">118 Midterm</a></li>
                   <li><a class="dropdown-item" href="projects.html#project2">WS Deckbuilder</a></li>
                   <li><a class="dropdown-item" href="projects.html#project3">Slay the Spire Mod</a></li>
@@ -53,6 +55,8 @@
     </div>
   </nav>
 
+<!--Standard opener for all pages, a banner image with the first section. The banner is part of the section to make
+the background gradient start at a better spot-->
     <div class="container-fluid" id="whoami">
       <div class="row">
         <img src="images/banner.jpg" alt="me at ueno zoo, tokyo" id="banner">
@@ -64,16 +68,16 @@
       </div>
       <div class="row">
         <div class="container">
-          <p class="fs-3 m-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Maecenas pharetra leo a odio laoreet, vitae consectetur lorem faucibus. Donec sed eleifend nibh.
-            Vestibulum malesuada non tellus eget bibendum. In tempus eu erat sit amet dictum. Nullam id est varius, viverra purus eu, pharetra massa.
-            Phasellus eros ipsum, tempus at diam quis, condimentum suscipit magna. Duis ultricies vitae arcu elementum scelerisque.
-            Fusce at augue nec augue tempus efficitur vel consectetur massa. Vivamus quis tortor vehicula, bibendum ex sit amet, interdum eros.
-            Aenean sollicitudin tempor massa. Quisque in magna nec velit viverra consequat.</p>
+          <p class="fs-3 m-5">Hi! I'm Thomas, currently attending Camosun College's ICS program building
+            up the skills for a future career in IT. I haven't finished much, but I've got lots of plans for
+          future projects. I started programming in High School with C++, did a stint at UVIC and Camosun in 2006-2009
+          but didn't finish. I found my way into the workforce and spent nearly a decade at Price's Alarms.
+          Deciding I need to do something more with my future I'm back in school with old passion of programming.</p>
         </div>
       </div>
     </div>
 
+<!--Bootstrap Carousel with indicator buttons-->
     <div class="container-fluid p-5 d-flex justify-content-center align-items-center" id="hobbies">
       <div class="row">
         <div class="col-lg-6 d-flex justify-content-center mb-5">
@@ -85,13 +89,13 @@
             </div>
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img src="images/1520383256471.jpg" class="d-block w-100" alt="...">
+                <img src="images/1520383256471.jpg" class="d-block w-100" alt="group of friends at Symphogear LIVE 2018">
               </div>
               <div class="carousel-item">
-                <img src="images/1520383256471.jpg" class="d-block w-100" alt="...">
+                <img src="images/IMG_20160301_171904.jpg" class="d-block w-100" alt="me in front of Strike Gundam">
               </div>
               <div class="carousel-item">
-                <img src="images/1520383256471.jpg" class="d-block w-100" alt="...">
+                <img src="images/IMG_20221120_162938.jpg" class="d-block w-100" alt="Symphogear Live 2022 concert venue">
               </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselIndicators" data-bs-slide="prev">
@@ -107,16 +111,18 @@
         <div class="col-lg"></div>
         <div class="col-lg-5 d-flex flex-column justify-content-center">
           <h2 class="fs-1 fw-bolder">Hobbies</h2>
-          <p class="fs-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Maecenas pharetra leo a odio laoreet, vitae consectetur lorem faucibus. Donec sed eleifend nibh.
-            Vestibulum malesuada non tellus eget bibendum. In tempus eu erat sit amet dictum. Nullam id est varius, viverra purus eu, pharetra massa.
-            Phasellus eros ipsum, tempus at diam quis, condimentum suscipit magna. Duis ultricies vitae arcu elementum scelerisque.
-            Fusce at augue nec augue tempus efficitur vel consectetur massa. Vivamus quis tortor vehicula, bibendum ex sit amet, interdum eros.
-            Aenean sollicitudin tempor massa. Quisque in magna nec velit viverra consequat.</p>
+          <p class="fs-4">Video Games are my first love. According to my brother I could beat Bowser is Super Mario World
+          when I was 3! All through childhood I grew up wanting to make video games. I mostly play RPGs but do dabble
+          in most genre's. Some of my favourite games are: Super Metroid, Final Fantasy Tactics and Demons' Souls.<br>
+            I'm a huge fan of Anime and thats largely dictated my habits for the past couple decades I've seen
+            hundreds of shows, I read Light Novels and manga. Some of my favourite shows are: Puella Magi Madoka Magica
+          Senki Zesshou Symphogear, and Macross.<br>
+          I also enjoy Dungeons & Dragons, Magic: The Gathering, and Weiss Schwarz</p>
         </div>
       </div>
     </div>
 
+<!--Basic footer with social media icons and copyright, the previous sections background gradient flows into this color nicely-->
   <footer class="container-fluid py-2" id="footer">
     <div class="row">
       <div class="col"></div>
@@ -138,6 +144,7 @@
     </div>
   </footer>
 
+<!--Bootstrap Javascript import-->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
           integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>

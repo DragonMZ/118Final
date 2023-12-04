@@ -20,6 +20,8 @@
 </head>
 <body>
 
+<!--Using bootstrap classes this creates a standard top navbar that turns into a hamburger bar at smaller sizes
+The projects icon is a dropdown menu instead of a standard anchor with each part going to a different section of that page-->
 <nav class="navbar navbar-expand-lg" id="navbar" data-bs-theme="dark">
   <div class="container-fluid">
     <a class="navbar-brand fs-1 fw-bolder text-end col-3" href="contact.html#formBox">Thomas Adler</a>
@@ -38,7 +40,7 @@
         <li class="nav-item dropdown mx-4">
           <a class="nav-link fs-3 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Projects</a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="projects.html#intro">About</a></li>
+            <li><a class="dropdown-item" href="projects.html#intro">Top</a></li>
             <li><a class="dropdown-item" href="projects.html#project1">118 Midterm</a></li>
             <li><a class="dropdown-item" href="projects.html#project2">WS Deckbuilder</a></li>
             <li><a class="dropdown-item" href="projects.html#project3">Slay the Spire Mod</a></li>
@@ -55,7 +57,7 @@
 
 <div class="container-fluid pb-5" id="skills">
   <div class="row mb-5">
-    <img src="images/banner.jpg" alt="" id="banner">
+    <img src="images/IMG_20180302_135939.jpg" alt="famous anime tree in yokohama" id="banner">
   </div>
 
   <div class="row mb-5">
@@ -64,7 +66,8 @@
     </div>
   </div>
 
-  <div class="skill row d-flex justify-content-evenly mb-lg-5">
+<!--  First row of skill cards-->
+  <div class="skill row d-flex justify-content-evenly mb-md-5">
       <div class="card">
         <i class="text-center bx bxl-java"></i>
         <div class="card-body">
@@ -85,6 +88,7 @@
       </div>
   </div>
 
+<!--  Second row of skill cards-->
   <div class="skill row d-flex justify-content-evenly">
     <div class="card">
       <i class="text-center bx bxl-html5"></i>
@@ -114,17 +118,24 @@
     </div>
   </div>
   <div class="row">
-    <div class="col d-flex justify-content-center">
-      <p class="fs-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Maecenas pharetra leo a odio laoreet, vitae consectetur lorem faucibus. Donec sed eleifend nibh.
-        Vestibulum malesuada non tellus eget bibendum. In tempus eu erat sit amet dictum. Nullam id est varius, viverra purus eu, pharetra massa.
-        Phasellus eros ipsum, tempus at diam quis, condimentum suscipit magna. Duis ultricies vitae arcu elementum scelerisque.
-        Fusce at augue nec augue tempus efficitur vel consectetur massa. Vivamus quis tortor vehicula, bibendum ex sit amet, interdum eros.
-        Aenean sollicitudin tempor massa. Quisque in magna nec velit viverra consequat.</p>
+    <div class="col-lg-3"></div>
+    <div class="box d-flex justify-content-between col-lg">
+      <div>
+        <p class="fs-4 fw-bolder">Information Computer Systems (ICS)<br>
+        Camosun College, Victoria BC</p>
+        <p class="fs-4 details">
+          Web Fundamentals<br>
+          Algorithms & Programming<br>
+          Math & Stats for Computing<br>
+          OS & Architecture<br>
+        </p>
+      </div>
+      <div class="justify-content-end">
+        <p class="fs-4 fw-bolder">2023-Current</p>
+      </div>
     </div>
+    <div class="col-lg-3"></div>
   </div>
-</div>
-</div>
 </div>
 
 <div class="container-fluid p-5" id="work">
@@ -134,16 +145,24 @@
     </div>
   </div>
   <div class="row">
-    <div class="col d-flex justify-content-center">
-          <p class="fs-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Maecenas pharetra leo a odio laoreet, vitae consectetur lorem faucibus. Donec sed eleifend nibh.
-            Vestibulum malesuada non tellus eget bibendum. In tempus eu erat sit amet dictum. Nullam id est varius, viverra purus eu, pharetra massa.
-            Phasellus eros ipsum, tempus at diam quis, condimentum suscipit magna. Duis ultricies vitae arcu elementum scelerisque.
-            Fusce at augue nec augue tempus efficitur vel consectetur massa. Vivamus quis tortor vehicula, bibendum ex sit amet, interdum eros.
-            Aenean sollicitudin tempor massa. Quisque in magna nec velit viverra consequat.</p>
-        </div>
+    <div class="col-lg-3"></div>
+    <div class="box d-flex justify-content-between col-lg">
+      <div>
+        <p class="fs-4 fw-bolder">Alarm Monitor<br>
+          Prices Alarms, Victoria BC</p>
+        <p class="fs-4 details">
+          Dispatched emergency services<br>
+          Customer Service & Troubleshooting<br>
+          Coordinated via Teams<br>
+          Data Entry & Error Checking<br>
+          Automated tedious tasks<br>
+        </p>
+      </div>
+      <div class="justify-content-end">
+        <p class="fs-4 fw-bolder">2012-2021</p>
       </div>
     </div>
+    <div class="col-lg-3"></div>
   </div>
 </div>
 
@@ -155,25 +174,30 @@
   </div>
   <div class="row">
     <div class="col-lg-6 d-flex justify-content-center">
-      <img src="images/1520383256471.jpg" alt="sympho2018meetup" class="img-fluid rounded">
+      <img src="images/1599337_10153820135995524_1861405943_o.jpg" alt="tsukinocon staff shot" class="img-fluid rounded">
     </div>
     <div class="col-lg"></div>
     <div class="col-lg-5 d-flex flex-column justify-content-center">
-          <h2 class="fs-1 fw-bolder">Volunteer</h2>
-          <p class="fs-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Maecenas pharetra leo a odio laoreet, vitae consectetur lorem faucibus. Donec sed eleifend nibh.
-            Vestibulum malesuada non tellus eget bibendum. In tempus eu erat sit amet dictum. Nullam id est varius, viverra purus eu, pharetra massa.
-            Phasellus eros ipsum, tempus at diam quis, condimentum suscipit magna. Duis ultricies vitae arcu elementum scelerisque.
-            Fusce at augue nec augue tempus efficitur vel consectetur massa. Vivamus quis tortor vehicula, bibendum ex sit amet, interdum eros.
-            Aenean sollicitudin tempor massa. Quisque in magna nec velit viverra consequat.</p>
+      <div class="d-lg-flex justify-content-between align-items-end">
+          <h2 class="fs-1 fw-bolder">Tsukino-Con</h2>
+          <h3 class="fs-1 fw-bolder">2009-2024</h3>
+      </div>
+          <ul class="fs-4">
+            <li>Founding staff member of the Victoria anime convention Tsukino-Con</li>
+            <li>Games Room Coordinator (Formerly)</li>
+            <li>Media Programming</li>
+            <li>Prize Coordinator</li>
+            <li>Panelist</li>
+          </ul>
         </div>
   </div>
 </div>
 
 <div class="text-center mb-3">
-  <a class="fs-1" href="" id="resumeDownload">Download Resume</a>
+  <a class="fs-1" href="" id="resumeDownload">| Download Resume |</a>
 </div>
 
+<!--Basic footer with social media icons and copyright, the previous sections background gradient flows into this color nicely-->
 <footer class="container-fluid py-2" id="footer">
   <div class="row">
     <div class="col"></div>
@@ -195,6 +219,7 @@
   </div>
 </footer>
 
+<!--Bootstrap Javascript import-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
