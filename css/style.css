@@ -163,6 +163,14 @@ when on smaller viewports*/
     box-shadow: 1rem 1rem;
     color: black;
 }
+/*This is required due to specificity*/
+#skills .card p {
+    color: var(--lightthistle);
+    transition: 0.5s
+}
+#skills .card:hover p {
+    color: black;
+}
 #skills .card i {
     font-size: 5rem;
 }
@@ -230,6 +238,7 @@ ul {
 #project4 {
     background: linear-gradient(var(--darkthistle) 0%, var(--eerie-black) 100%);
 }
+/*Shifting the banner image so it looks better on desktop*/
 #intro #banner {
     object-position: 50% 25%;
 }
