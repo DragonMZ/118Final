@@ -83,6 +83,48 @@ when on smaller viewports*/
     padding: 0;
     object-fit: cover;
 }
+/*Styles a circular goto top button that's mostly invisible until hovered
+where it will fully opaque and play a bouncing animation*/
+#topbtn {
+    background-color: var(--darkthistle);
+    border-radius: 50%;
+    border-style: solid;
+    border-color: var(--lightthistle);
+    position: fixed;
+    bottom: 3%;
+    left: 5%;
+    height: 4rem;
+    width: 4rem;
+    opacity: 0.25;
+    transition: 0.5s;
+}
+#topbtn i {
+    font-size: 2.5rem;
+    color: var(--lightthistle);
+}
+#topbtn:hover {
+    opacity: 1;
+    transform: scale(1.1,1.1);
+}
+@keyframes bounce {
+    0% {transform: scale(1,1) translate(0, 0);}
+    25% {transform: scale(1.5,0.5) translate(0, 10px);}
+    50% {transform: scale(1.8,0.3) translate(0, 10px);}
+    75% {transform: scale(1.5,0.7) translate(0, 5px);}
+    100% {transform: scale(0.7,1.2) translate(0, 0);}
+}
+#topbtn:hover > a {
+    animation-name: bounce;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+}
+/*Adjusts the position for small screens so it doesnt overlap with footer icons*/
+@media only screen and (max-width: 600px) {
+    #topbtn {
+        bottom: 10%;
+    }
+}
 /*Setting up footer, this is up here because its on every page*/
 #footer {
     background-color: var(--eerie-black);
@@ -345,13 +387,22 @@ ul {
 /*Button styling*/
 #contact .btn-primary {
     background-color: var(--midthistle);
-    color: white;
     border-color: var(--darkthistle);
+    transition: 0.5s;
+}
+#contact a {
+    color: white;
+    text-decoration: none;
     transition: 0.5s;
 }
 #contact .btn-primary:hover {
     background-color: var(--thistle);
-    color: var(--eerie-black);
     border-color: var(--lightthistle);
-    border-radius: 1.5rem
+    border-radius: 1.5rem;
 }
+/*Changes the anchor link text when any part of the button is hovered*/
+#contact .btn-primary:hover > a {
+    color: black;
+}
+
+
