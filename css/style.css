@@ -123,6 +123,11 @@ where it will fully opaque and play a bouncing animation*/
 @media only screen and (max-width: 600px) {
     #topbtn {
         bottom: 10%;
+        height: 3rem;
+        width: 3rem;
+    }
+    #topbtn i {
+        font-size: 1.5rem;
     }
 }
 /*Setting up footer, this is up here because its on every page*/
